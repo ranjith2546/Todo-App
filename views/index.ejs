@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>
+            Todo Applications
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+                    <div class="jumbotron">
+                    <h1>Todo Applications</h1>
+                     <p>Todo.ly is an intuitive and easy to use online Todo list, and Task Manager. It helps you to get organized, simplify your life, and to get things done.   </p> 
+                    </div>
+                <form action="/add" method="post">
+                    <div class="form-group">
+                            <label for="usr">Enter the Text</label>
+                            <input type="text" name="userinput"  class="form-control"  id="usr" >
+                        </div>
+                            <input type="submit" value="Add" class="btn btn-success btn-lg">
+
+
+                        
+                        
+                    
+                </form>
+                <ul class="list-group" >
+                    <%
+                        if ( TodoNotes.length > 0 ) {
+                            for( var i=0; i<TodoNotes.length; i++ ) {
+                        %>
+                                
+                                <li value = <%= TodoNotes[i].Id %>  class="list-group-item"> 
+                                        <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                       
+                                            <%= TodoNotes[i].Text %> 
+                                            <a href="/delete?id=<%=TodoNotes[i].Id%>" class="btn btn-primary btn-outline">Delete</a>
+
+                                                </div>
+                                        
+                                        </div>
+
+                                           
+                                    
+                                </li>
+                        <%
+                            }
+                        }  
+                    %>
+                </ul>
+            </div>
+    </body>
+</html>
