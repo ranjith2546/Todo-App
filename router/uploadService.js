@@ -2,7 +2,8 @@
 const express = require('express');
 const router = express.Router();
 
-var multer  = require('multer')
+var multer  = require('multer');
+
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'public/upload/')
@@ -19,7 +20,6 @@ router.get('/',(req,res) => {
 });
 
 router.post('/',upload.array('files'), (req,res) => {
-    
     res.send("File upload sucessfully.");
 });
 

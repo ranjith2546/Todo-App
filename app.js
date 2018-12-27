@@ -27,8 +27,11 @@ app.use(express.static(path.join(__dirname,'public')));
 var upload = multer({ dest: 'upload/' });
 
 
-app.use('/todo',todoService);
-app.use('/',uploadService);
+app.use('/',todoService);
+/* app.use('/add',todoService);
+app.use('/delete',todoService);
+
+app.use('/',uploadService); */
 
 
 module.exports = app;

@@ -5,11 +5,11 @@ const router = express.Router();
 var TodoNotes = [
     {
         Id: 0,
-        Test: 'Test1'
+        Text: 'Test1'
     },
     {
         Id: 2,
-        Test: 'Test2'
+        Text: 'Test2'
     }
 ];
 var TodoID = 5;

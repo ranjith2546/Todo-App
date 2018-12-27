@@ -13,28 +13,35 @@
                     </div>
                 <form action="/add" method="post">
                     <div class="form-group">
-                            <label for="usr">Enter the Text</label>
-                            <input type="text" name="userinput"  class="form-control"  id="usr" >
+                        <div class =" row col-md-12 mb-3">
+                                <label for="usr">Enter the Text</label>
+                                <input type="text" name="userinput"  class="form-control"  id="usr" >
                         </div>
-                            <input type="submit" value="Add" class="btn btn-success btn-lg">
+
+                        <div class ="row col-md-12 mb-2 text-center">
+                                <input type="submit" value="Add" class="btn btn-success btn-lg">
+                        </div>
+                            
+                    </div>
+
 
 
                         
                         
                     
                 </form>
-                <ul class="list-group" >
+                <ul class="list-group mb-2" >
                     <%
                         if ( TodoNotes.length > 0 ) {
                             for( var i=0; i<TodoNotes.length; i++ ) {
                         %>
                                 
-                                <li value = <%= TodoNotes[i].Id %>  class="list-group-item"> 
-                                        <div class="panel panel-default">
+                                <li value = <%= TodoNotes[i].Id %>  class="list-group-item mb-3"> 
+                                        <div class="panel panel-default  ">
                                                 <div class="panel-body">
                                                        
                                             <%= TodoNotes[i].Text %> 
-                                            <a href="/delete?id=<%=TodoNotes[i].Id%>" class="btn btn-primary btn-outline">Delete</a>
+                                            <a href="/delete?id=<%=TodoNotes[i].Id%>" class="btn float-right btn-primary btn-outline">Delete</a>
 
                                                 </div>
                                         
